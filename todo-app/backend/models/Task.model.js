@@ -25,27 +25,25 @@ var taskSchema = new mongoose.Schema({
     minlength: 3
   },
 
-  /*enum priority {
-    high,
-    mid,
-    low
-  }*/
-
-
+ 
   priority: {
-    type: String ,
-    required: true,
-    unique: true,
-    trim: true,
-  },
+    type: String,
+    enum : ['high','mid','low'],
+    default: 'mid'
+  ,
+  required : true,
 
+},
+ 
+
+ 
   validation: {
     type: Boolean,
   },
 
 
 
- /* startingdate: {
+ startingdate: {
     type: Date,
     required: true,
   },
@@ -53,7 +51,7 @@ var taskSchema = new mongoose.Schema({
   endingdate: {
     type: Date,
     required: true,
-  }, */
+  }, 
 
 
 }, {
